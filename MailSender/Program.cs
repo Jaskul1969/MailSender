@@ -11,7 +11,7 @@ static void Wyslij(string email, string haslo, string tresc, string temat)//twor
 {
 
     MailAddress from = new MailAddress(email);//pobieranie adresu nadawcy 
-    MailAddress to = new MailAddress("jaskul1969@gmail.com", "Kacper Jaskulski", System.Text.Encoding.UTF8);//adres i nazwa odbiorcy
+    MailAddress to = new MailAddress("tu wpisz adres email adresata", "Tu wpisz imię i nazwisko adrssata", System.Text.Encoding.UTF8);//adres i nazwa odbiorcy
     MailMessage message = new MailMessage(from, to);//tworzenie wiadomości
     message.Body = tresc;//wstawianie treści
     message.Subject = temat;//wstawianie teamtu
@@ -49,7 +49,7 @@ if (polaczono)
         //tworzenie wiadomości 
         string tresc = $"ID:{dr[0]}, Imię:{dr[1]}, Nazwisko:{dr[2]}, Data urodzenia:{dr[3]}, Adres zamieszkania:{dr[4]}, Adres korespondencyjny:{dr[5]}, Adres zameldowania:{dr[6]}, Adres podatkowy:{dr[7]}, Wojewodztwo:{dr[8]}";
         string temat = "Raport osob, które za 30 dni skończą 55 lat";
-        Wyslij("jaskul1969@hotmail.com", "Jaski+191", tresc, temat);//definiowanie emaila i hasła nadawcy oraz treści i tematu wiadomości
+        Wyslij("tu wpisz email do konta outlook", "tu wpisz haslo do konta outlook", tresc, temat);//definiowanie emaila i hasła nadawcy oraz treści i tematu wiadomości
     }
     dr.Close();//zamykanie czytnika
     //tworzenie zapytanie sprawdzającego czy są powtórzone dane
@@ -61,7 +61,7 @@ if (polaczono)
         //tworzenie drugiej wiadowmości 
         string tresc = $"Imię:{dr1[0]}, Nazwisko:{dr1[1]}, Data urodzenia:{dr1[2]}, liczba powtórzeń{dr1[3]}";
         string temat = "Raport powtórzonych osób";
-        Wyslij("jaskul1969@hotmail.com", "Jaski+191", tresc, temat);
+        Wyslij("tu wpisz email do konta outlook", "tu wpisz hasło do konta outlook", tresc, temat);
     }
 
 }
